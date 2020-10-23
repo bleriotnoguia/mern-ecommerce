@@ -1,0 +1,13 @@
+import React from 'react';
+import Footer from './components/Footer';
+import Header from './components/Header';
+
+const App = () => {
+  return (
+    <>
+      <h1>Welcome to ProShop</h1>
+    </>
+  );
+}
+
+export default App;
