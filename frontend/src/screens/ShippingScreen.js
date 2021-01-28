@@ -5,9 +5,8 @@ import FormContainer from '../components/FormContainer'
 import CheckoutSteps from '../components/CheckoutSteps'
 import { saveShippingAddress } from '../actions/cartActions'
 
-function ShippingScreen({history}) {
-
-    const cart = useSelector(state => state.cart)
+function ShippingScreen({ history }) {
+    const cart = useSelector((state) => state.cart)
     const { shippingAddress } = cart
 
     const [address, setAddress] = useState(shippingAddress.address)
@@ -18,7 +17,7 @@ function ShippingScreen({history}) {
     const dispatch = useDispatch()
     const submitHandler = (e) => {
         e.preventDefault()
-        dispatch(saveShippingAddress({address, city, postalCode, country}))
+        dispatch(saveShippingAddress({ address, city, postalCode, country }))
         history.push('/payment')
     }
     return (
@@ -62,7 +61,7 @@ function ShippingScreen({history}) {
                         onChange={(e) => setCountry(e.target.value)}
                     ></Form.Control>
                 </Form.Group>
-                <Button type="submit" variant="primary">
+                <Button type='submit' variant='primary'>
                     Continue
                 </Button>
             </Form>
