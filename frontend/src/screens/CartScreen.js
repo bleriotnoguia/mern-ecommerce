@@ -25,7 +25,7 @@ const CartScreen = ({match, location, history}) => {
         dispatch(removeFromCart(id))
     }
     const checkoutHandler = () => {
-        // history.push('/login?redirect=shipping')
+        history.push('/login?redirect=shipping')
     }
     return (
        <Row>
@@ -39,7 +39,7 @@ const CartScreen = ({match, location, history}) => {
                 ) : (
                     <ListGroup variant='flush'>
                         {cartItems.map(item => (
-                            <ListGroup.Item key={item.productId}>
+                            <ListGroup.Item key={item.product}>
                                 <Row>
                                     <Col md={2}>
                                         <Image src={item.image} alt={item.name} fluid rounded />
