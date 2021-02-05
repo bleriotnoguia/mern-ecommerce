@@ -30,7 +30,7 @@ function OrderScreen({match}) {
         if(!order || order._id !== orderId){
             dispatch(getOrderDetails(orderId))
         }
-    }, [order, orderId])
+    }, [dispatch, order, orderId])
 
     return loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> : <>
     <h1>Order {order._id}</h1>
