@@ -19,14 +19,18 @@ function OrderScreen({match}) {
 
     if(!loading){
         // Calculate prices
-        order.itemsPrice = addDecimals(order.orderItems.reduce(
-            (acc, item) => acc + item.price * item.qty, 0
-        ))
+        if(order){
+            order.itemsPrice = addDecimals(order.orderItems.reduce(
+                (acc, item) => acc + item.price * item.qty, 0
+            ))
+        }
     }
 
     useEffect(() => {
-        dispatch(getOrderDetails(orderId))
-    }, [])
+        if(!order || order._id !== orderId){
+            dispatch(getOrderDetails(orderId))
+        }
+    }, [order, orderId])
 
     return loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> : <>
     <h1>Order {order._id}</h1>
