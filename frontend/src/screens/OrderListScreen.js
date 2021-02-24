@@ -62,7 +62,7 @@ const OrderListScreen = ({ history }) => {
                                 </td>
                                 <td>
                                     {order.isDelivered ? (
-                                        order.deliveredAt
+                                        order.deliveredAt.substring(0, 10)
                                     ) : (
                                         <i
                                             className='fas fa-times'
@@ -72,7 +72,7 @@ const OrderListScreen = ({ history }) => {
                                 </td>
                                 <td>
                                     <LinkContainer
-                                        to={`/admin/order/${order._id}`}
+                                        to={`/order/${order._id}`}
                                     >
                                         <Button
                                             variant='light'
