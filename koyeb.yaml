@@ -20,4 +20,4 @@ deployment:
       command: ["node", "backend/server.js"]
       replicas: 1
       ports:
-        - port: 3000
+        - port: 5000
