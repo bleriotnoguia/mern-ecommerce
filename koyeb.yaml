@@ -1,3 +1,7 @@
+# This YAML file is used for configuring the deployment steps and services for a MERN e-commerce application on Koyeb.
+# The deployment section specifies the steps to be executed, including frontend installation and build.
+# The services section defines the backend service, which runs on a Node.js image and executes the server.js file.
+# The backend service is configured with 1 replica and exposes port 3000.
 deployment:  
   steps:    
     - name: frontend-install      
@@ -5,9 +9,15 @@ deployment:
       command: ["npm"]      
       args: ["install", "--production=false"]      
       workingDir: /frontend
-      
     - name: frontend-build      
       image: node:latest      
       command: ["npm"]      
       args: ["run", "build"]      
       workingDir: /frontend
+  services:
+    - name: backend
+      image: node:latest
+      command: ["node", "backend/server.js"]
+      replicas: 1
+      ports:
+        - port: 3000
