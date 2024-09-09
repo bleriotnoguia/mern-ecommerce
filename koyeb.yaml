@@ -1,0 +1,13 @@
+deployment:  
+  steps:    
+    - name: frontend-install      
+      image: node:latest      
+      command: ["npm"]      
+      args: ["install", "--production=false"]      
+      workingDir: /frontend
+      
+    - name: frontend-build      
+      image: node:latest      
+      command: ["npm"]      
+      args: ["run", "build"]      
+      workingDir: /frontend
