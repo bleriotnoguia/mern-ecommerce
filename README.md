@@ -2,7 +2,7 @@
 
 > eCommerce platform built with the MERN stack & Redux for learning purposes.
 
-[See Website Here](https://theproshop.herokuapp.com/)
+[See Website Here](https://enormous-iona-bleriot-noguia-e01e909f.koyeb.app)
 [![screenshot](https://github.com/bleriotnoguia/nerm-ecommerce/blob/main/frontend/public/images/website.png)](https://theproshop.herokuapp.com/)
 
 ## Getting Started
